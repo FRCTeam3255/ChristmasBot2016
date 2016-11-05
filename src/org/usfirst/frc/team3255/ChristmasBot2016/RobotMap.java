@@ -18,6 +18,7 @@ public class RobotMap {
 	
 	// Joysticks
 	public static final int JOYSTICK_DRIVER = 0;
+	public static final int JOYSTICK_SHOOTER = 1;
 	
 	public static final int DRIVER_AXIS_LEFT_SPEED = 1;
 	public static final int DRIVER_AXIS_RIGHT_SPEED = 3;

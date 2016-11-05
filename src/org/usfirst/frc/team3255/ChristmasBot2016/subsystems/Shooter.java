@@ -47,6 +47,18 @@ public class Shooter extends Subsystem {
 		shooterBottomTalon.set(s);
 	}
 	
+	public void setFeederSpeed(double s) {
+		feederTalon.set(s);
+	}
+	
+	public void setAgitatorSpeed(double s) {
+		agitatorTalon.set(s);
+	}
+	
+	public boolean isFeederSwitchClosed(){
+		return feederSwitch.get();
+	}
+	
     public void initDefaultCommand() {
     }
 }

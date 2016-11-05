@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
  */
 public class OI {
 	public static Joystick driverStick = new Joystick(RobotMap.JOYSTICK_DRIVER);
+	public static Joystick shooterStick = new Joystick(RobotMap.JOYSTICK_SHOOTER);
 
 	// driveStick
 	Button D1 = new JoystickButton(driverStick, 1);
@@ -24,12 +25,29 @@ public class OI {
 	Button D9 = new JoystickButton(driverStick, 9);
 	Button D10 = new JoystickButton(driverStick, 10);
 
+	Button S1 = new JoystickButton(shooterStick, 1);
+	Button S2 = new JoystickButton(shooterStick, 2);
+	Button S4 = new JoystickButton(shooterStick, 4);
+	Button S5 = new JoystickButton(shooterStick, 5);
+	Button S6 = new JoystickButton(shooterStick, 6);
+	Button S7 = new JoystickButton(shooterStick, 7);
+	Button S8 = new JoystickButton(shooterStick, 8);
+	Button S9 = new JoystickButton(shooterStick, 9);
+	Button S10 = new JoystickButton(shooterStick, 10);
+	Button S11 = new JoystickButton(shooterStick, 11);
+	Button S12 = new JoystickButton(shooterStick, 12);
+	
 	public OI() {
 		// driveStick
 		D2.whenPressed(new DriveReverse());
 		D2.whenReleased(new DriveStop());
 		D4.whenPressed(new DriveForward());
 		D4.whenReleased(new DriveStop());
+		
+		//shooterStick
+		S1.whenPressed(new ShooterRun());
+		S1.whenReleased(new ShooterStop());
+		S2.whenPressed(new ShootOneBall());
 	}
 
     //// CREATING BUTTONS

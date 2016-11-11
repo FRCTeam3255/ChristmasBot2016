@@ -42,4 +42,8 @@ public class RobotMap {
 	// Digital I/O Ports
 	public static final int SHOOTER_FEEDER_SWITCH = 0;
 	
+	//PCM
+	public static final int COLLECTOR_SOLENOID_DEPLOY = 0;
+	public static final int COLLECTOR_SOLENOID_RETRACT = 1;
+	
 }

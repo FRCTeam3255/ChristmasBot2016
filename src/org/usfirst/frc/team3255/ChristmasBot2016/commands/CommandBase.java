@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj.command.Command;
 public abstract class CommandBase extends Command {
 	public static Drivetrain drivetrain;
 	public static Shooter shooter;
+	public static Collector collector;
 	public static OI oi;
 
 	public CommandBase() {	
@@ -16,6 +17,7 @@ public abstract class CommandBase extends Command {
 	public static void init() {
 		drivetrain = new Drivetrain();
 		shooter = new Shooter();
+		collector = new Collector();
 		oi = new OI();
 	}
 }

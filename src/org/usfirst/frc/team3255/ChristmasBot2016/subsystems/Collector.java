@@ -1,5 +1,9 @@
 package org.usfirst.frc.team3255.ChristmasBot2016.subsystems;
 
+import org.usfirst.frc.team3255.ChristmasBot2016.RobotMap;
+
+import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
@@ -8,6 +12,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class Collector extends Subsystem {
 	Talon talon = null;
+	DoubleSolenoid doubleSolenoid = null;
 	
 	public Collector() {
 		super();
@@ -23,32 +28,37 @@ public class Collector extends Subsystem {
 
 	private void init() {
 		// Talons
-//		talon = new Talon(RobotMap.COLLECTOR_TALON);
+		talon = new Talon(RobotMap.COLLECTOR_TALON);
+		doubleSolenoid = new DoubleSolenoid(RobotMap.COLLECTOR_SOLENOID_DEPLOY, RobotMap.COLLECTOR_SOLENOID_RETRACT);
 		
-//		shooterTopTalon.setSafetyEnabled(false);
-//		shooterBottomTalon.setSafetyEnabled(false);
-//		feederTalon.setSafetyEnabled(false);
-//		agitatorTalon.setSafetyEnabled(false);
-		
+		talon.setSafetyEnabled(false);
 	}
 
 	public void setSpeed(double s) {
-//		shooterTopTalon.set(s);
-//		shooterBottomTalon.set(s);
+		talon.set(s);
+
 	}
 	
-	public void setFeederSpeed(double s) {
-//		feederTalon.set(s);
+	public void deploy() {
+		doubleSolenoid.set(Value.kForward);
 	}
-	
-	public void setAgitatorSpeed(double s) {
-//		agitatorTalon.set(s);
+
+	public void retract() {
+		doubleSolenoid.set(Value.kReverse);
 	}
-	
-	public boolean isFeederSwitchClosed(){
-		return true;
+
+	public boolean isDeployed() {
+		Value v;
+		
+		v = doubleSolenoid.get();
+
+		if(v == Value.kForward) {
+			return true;
+		}
+		
+		return false;
 	}
-	
+		
     public void initDefaultCommand() {
     }
 }

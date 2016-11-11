@@ -27,6 +27,7 @@ public class OI {
 
 	Button S1 = new JoystickButton(shooterStick, 1);
 	Button S2 = new JoystickButton(shooterStick, 2);
+	Button S3 = new JoystickButton(shooterStick, 3);
 	Button S4 = new JoystickButton(shooterStick, 4);
 	Button S5 = new JoystickButton(shooterStick, 5);
 	Button S6 = new JoystickButton(shooterStick, 6);
@@ -38,16 +39,14 @@ public class OI {
 	Button S12 = new JoystickButton(shooterStick, 12);
 	
 	public OI() {
-		// driveStick
-		D2.whenPressed(new DriveReverse());
-		D2.whenReleased(new DriveStop());
-		D4.whenPressed(new DriveForward());
-		D4.whenReleased(new DriveStop());
-		
 		//shooterStick
 		S1.whenPressed(new ShooterRun());
 		S1.whenReleased(new ShooterStop());
 		S2.whenPressed(new ShootOneBall());
+		S3.whenPressed(new CollectorDeploy());
+		S4.whenPressed(new CollectorRetract());
+		S11.whenPressed(new CollectorReverse());
+		S11.whenReleased(new CollectorStop());
 	}
 
     //// CREATING BUTTONS

@@ -32,12 +32,11 @@ public class RobotMap {
 	public static final int DRIVETRAIN_RIGHT_BACK_TALON = 3;
 	
 	public static final int COLLECTOR_TALON = 4;
-	public static final int LIFTER_TALON = 5;
+	public static final int SHOOTER_FEEDER_TALON = 5;
 	
 	public static final int SHOOTER_TOP_TALON = 6;
 	public static final int SHOOTER_BOTTOM_TALON = 7;
 	public static final int SHOOTER_AGITATOR_TALON = 8;
-	public static final int SHOOTER_FEEDER_TALON = 9;
 
 	// Digital I/O Ports
 	public static final int SHOOTER_FEEDER_SWITCH = 0;

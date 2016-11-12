@@ -11,7 +11,7 @@ public class ShootOneBall extends CommandGroup {
     	addSequential(new ShooterSpinUp());
     	addSequential(new ShooterPrep());
     	addSequential(new FeederOn());
-    	addSequential(new DoDelay());
+    	addSequential(new DoDelay(0.2));
     	addSequential(new FeederOff());
     	addSequential(new ShooterOff());
     }

@@ -6,15 +6,17 @@ package org.usfirst.frc.team3255.ChristmasBot2016.commands;
 public class DoDelay extends CommandBase {
 	
 	double expireTime;
+	double delayTime;
 
-    public DoDelay() {
+    public DoDelay(double seconds) {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
+    	delayTime = seconds;
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	expireTime = timeSinceInitialized() + 0.2;
+    	expireTime = timeSinceInitialized() + delayTime;
     }
 
     // Called repeatedly when this Command is scheduled to run

@@ -1,5 +1,7 @@
 package org.usfirst.frc.team3255.ChristmasBot2016.commands;
 
+import edu.wpi.first.wpilibj.DriverStation;
+
 /**
  *
  */

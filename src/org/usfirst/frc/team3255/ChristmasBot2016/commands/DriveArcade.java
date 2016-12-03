@@ -20,7 +20,7 @@ public class DriveArcade extends CommandBase {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	double moveSpeed = -OI.driverStick.getRawAxis(RobotMap.DRIVER_AXIS_MOVE_SPEED);
-    	double rotateSpeed = OI.driverStick.getRawAxis(RobotMap.DRIVER_AXIS_ROTATE_SPEED);
+    	double rotateSpeed = -OI.driverStick.getRawAxis(RobotMap.DRIVER_AXIS_ROTATE_SPEED);
     	
     	drivetrain.arcadeDrive(moveSpeed, rotateSpeed);
     }

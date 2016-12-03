@@ -56,7 +56,7 @@ public class Shooter extends Subsystem {
 	}
 	
 	public void setAgitatorSpeed(double s) {
-		agitatorTalon.set(s);
+		agitatorTalon.set(-s);
 	}
 	
 	public boolean isFeederSwitchClosed(){

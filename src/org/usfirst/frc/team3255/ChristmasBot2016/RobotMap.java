@@ -43,6 +43,8 @@ public class RobotMap {
 	
 	//Relays
 	public static final int SHOOTER_HORN_RELAY = 0;
+	public static final int COLLECTOR_RELAY_RED = 1;
+	public static final int COLLECTOR_RELAY_GREEN = 2;
 	
 	//PCM
 	public static final int COLLECTOR_SOLENOID_DEPLOY = 0;

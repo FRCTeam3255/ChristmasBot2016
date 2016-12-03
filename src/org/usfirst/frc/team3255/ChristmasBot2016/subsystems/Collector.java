@@ -3,6 +3,7 @@ package org.usfirst.frc.team3255.ChristmasBot2016.subsystems;
 import org.usfirst.frc.team3255.ChristmasBot2016.RobotMap;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -13,6 +14,8 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class Collector extends Subsystem {
 	Talon talon = null;
 	DoubleSolenoid doubleSolenoid = null;
+	Relay redRelay = null;
+	Relay greenRelay = null;
 	
 	public Collector() {
 		super();
@@ -30,6 +33,8 @@ public class Collector extends Subsystem {
 		// Talons
 		talon = new Talon(RobotMap.COLLECTOR_TALON);
 		doubleSolenoid = new DoubleSolenoid(RobotMap.COLLECTOR_SOLENOID_DEPLOY, RobotMap.COLLECTOR_SOLENOID_RETRACT);
+		redRelay = new Relay(RobotMap.COLLECTOR_RELAY_RED);
+		greenRelay = new Relay(RobotMap.COLLECTOR_RELAY_GREEN);
 		
 		talon.setSafetyEnabled(false);
 	}
@@ -57,6 +62,17 @@ public class Collector extends Subsystem {
 		}
 		
 		return false;
+	}
+	
+	public void setLED(boolean on) {
+		if(on == true) {
+			redRelay.set(Relay.Value.kOn);
+			greenRelay.set(Relay.Value.kOn);
+		}
+		else {
+			redRelay.set(Relay.Value.kOff);
+			greenRelay.set(Relay.Value.kOff);
+		}
 	}
 		
     public void initDefaultCommand() {

@@ -47,6 +47,8 @@ public class OI {
 		S4.whenPressed(new CollectorRetract());
 		S5.whenPressed(new ShooterPrep());
 		S6.whileHeld(new ShooterHonk());
+		S7.whenPressed(new CollectorLEDsOn());
+		S8.whenPressed(new CollectorLEDsOff());
 		S11.whenPressed(new CollectorReverse());
 		S11.whenReleased(new CollectorStop());
 	}

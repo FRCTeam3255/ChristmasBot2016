@@ -45,4 +45,8 @@ public class RobotMap {
 	public static final int COLLECTOR_SOLENOID_DEPLOY = 0;
 	public static final int COLLECTOR_SOLENOID_RETRACT = 1;
 	
+	//Relay
+	public static final int SHOOTER_HORN_RELAY = 0;
+	
+	
 }

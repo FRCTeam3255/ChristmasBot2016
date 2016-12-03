@@ -2,8 +2,6 @@ package org.usfirst.frc.team3255.ChristmasBot2016.subsystems;
 
 import org.usfirst.frc.team3255.ChristmasBot2016.RobotMap;
 import edu.wpi.first.wpilibj.DigitalInput;
-import edu.wpi.first.wpilibj.Relay;
-import edu.wpi.first.wpilibj.Relay.Value;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
@@ -16,7 +14,6 @@ public class Shooter extends Subsystem {
 	Talon feederTalon = null;
 	Talon agitatorTalon = null;
 	DigitalInput feederSwitch = null;
-	Relay relay = null;
 	
 	public Shooter() {
 		super();
@@ -37,7 +34,6 @@ public class Shooter extends Subsystem {
 		feederTalon = new Talon(RobotMap.SHOOTER_FEEDER_TALON);
 		agitatorTalon = new Talon(RobotMap.SHOOTER_AGITATOR_TALON);
 		feederSwitch = new DigitalInput(RobotMap.SHOOTER_FEEDER_SWITCH);
-		relay = new Relay(RobotMap.SHOOTER_HORN_RELAY);
 		
 		shooterTopTalon.setSafetyEnabled(false);
 		shooterBottomTalon.setSafetyEnabled(false);
@@ -61,15 +57,6 @@ public class Shooter extends Subsystem {
 	
 	public boolean isFeederSwitchClosed(){
 		return feederSwitch.get();
-	}
-	
-	public void setHorn(boolean on) {
-		if(on == true) {
-			relay.set(Value.kOn);
-		}
-		else {
-			relay.set(Value.kOff);
-		}
 	}
 	
     public void initDefaultCommand() {

@@ -46,6 +46,7 @@ public class OI {
 		S3.whenPressed(new CollectorDeploy());
 		S4.whenPressed(new CollectorRetract());
 		S5.whenPressed(new ShooterPrep());
+		S6.whileHeld(new ShooterHonk());
 		S11.whenPressed(new CollectorReverse());
 		S11.whenReleased(new CollectorStop());
 	}

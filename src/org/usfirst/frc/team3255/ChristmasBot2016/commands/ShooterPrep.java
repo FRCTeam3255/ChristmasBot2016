@@ -11,7 +11,7 @@ public class ShooterPrep extends CommandBase {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	shooter.setAgitatorSpeed(1.0);
+    	shooter.setAgitatorSpeed(0.5);
     	shooter.setFeederSpeed(1.0);
     }
 

@@ -66,8 +66,8 @@ public class Collector extends Subsystem {
 	
 	public void setLED(boolean on) {
 		if(on == true) {
-			redRelay.set(Relay.Value.kOn);
-			greenRelay.set(Relay.Value.kOn);
+			redRelay.set(Relay.Value.kForward);
+			greenRelay.set(Relay.Value.kForward);
 		}
 		else {
 			redRelay.set(Relay.Value.kOff);
